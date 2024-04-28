@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/fragmento1"
+        android:layout_width="0dp"  android:layout_height="0dp"  android:name="sv.edu.ufg.fis.amb.ramosaragonorientacion.Fragmento1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_container" />
+
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="0dp"  android:layout_height="200dp"  android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="10dp"
+        android:showDividers="middle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <fragment
+            android:id="@+id/fragmento2"
+            android:layout_width="0dp"  android:layout_height="match_parent"  android:layout_weight="1"
+            android:name="sv.edu.ufg.fis.amb.ramosaragonorientacion.Fragmento2"
+            app:layout_constraintTop_toTopOf="@+id/bottom_container"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_container"
+            app:layout_constraintLeft_toLeftOf="@+id/bottom_container" />
+
+        <fragment
+            android:id="@+id/fragmento3"
+            android:layout_width="0dp"  android:layout_height="match_parent"  android:layout_weight="1"
+            android:name="sv.edu.ufg.fis.amb.ramosaragonorientacion.Fragmento3"
+            app:layout_constraintTop_toTopOf="@+id/bottom_container"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_container"
+            app:layout_constraintRight_toRightOf="@+id/bottom_container" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
